@@ -1,0 +1,15 @@
+Docker Engine
+
+O motor do docker (docker engine) originalmente era um aglomerado de componentes monolítico, que tinha tudo dentro dele. A única coisa que ficava fora era o componente que fornecia acesso a algumas funções do kernel do linux, como namespaces e cgroups (LXC). O desenho da solução está na imagem docker-engine-antigo.PNG.
+
+Isso mudou. Agora, o motor do docker tornou-se mais modular e também deixou de usar o LXC para usar o libcontainer (imagem docker-engine.PNG). Essa mudança possibilitou a criação da OCI (Open Container Initiative), que é uma organização que visa padronizar a forma como os container são criados e executados. Existem duas especificações que foram desenvolvidas pela OCI, são elas:
+
+- Image Spec (padroniza como as imagens são criadas);
+- Container Runtime Spec (padroniza como os containers são executados)
+
+O daemon do docker não possui mais nenhum código que lida com a criação de containers. Quem faz isso agora é um componente chamado runc. Ele é a implementação da especificação Container Runtime Spec.
+
+PARA FAZER A CRIAÇÃO DE CONTAINERS:
+docker container run -it --name <NAME> <IMAGE>:<TAG>
+
+Os passos detalhados e um fluxograma mostrando o processo de criação dos containers estão nas imagens passos-criação-containers-1.PNG, passos-criação-containers-2.PNG e processo-criação-containers.PNG
