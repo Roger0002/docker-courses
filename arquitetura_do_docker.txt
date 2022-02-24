@@ -1,0 +1,13 @@
+Arquitetura do Docker
+
+O Docker funciona nbuma arquitetura cliente-servidor. O cliente é quem executa os comandos, enquanto o daemon do Docker (dockerd) faz todo o trabalho pesado, como a execução, building e distribuição dos containers.
+
+A comunicação entre o cliente e o daemon do docker é feita via REST API.
+
+O lugar centralizado onde armazenamos as imagens dos containers é chamado de registry, que nada mais é do que um repositório para as mesmas. Por padrão, o Docker utiliza o DockerHub, que é um repositório público de imagens. Nada nos impede de ter nosso próprio registry.
+
+Quando tentamos utilizar uma imagem não previamente baixada, o daemon do docker irá procurá-la e baixá-la do DockerHub para, depois, criar o container a partir da mesma.
+
+As imagens são templates de apenas leitura que contém as instruções de criação dos containers.
+
+A arquitetura do Docker pode ser resumida na imagem arquitetura_docker.png.
