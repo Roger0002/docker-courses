@@ -1,0 +1,9 @@
+docker container run -Pd nginx -> Executa o container com uma porta alta aleatória, no host local, mapeada para a porta que será aberta dentro do container (-P) e põe o container em modo daemon (-d)
+docker container top d690250bd84a -> Verifica os processos em execução dentro do container cujo ID é o d690250bd84a
+docker container stats d690250bd84a -> Verifica o consumo de recursos dentro do container cujo ID é o d690250bd84a
+docker container logs d690250bd84a -> Verifica o log de atividades do container cujo ID é d690250bd84a
+docker container exec -it d690250bd84a /bin/bash -> Executa o shell bash dentro do container e nos joga para dentro dele
+docker container pause d690250bd84a -> Pausa a execução do container cujo ID é d690250bd84a
+docker container unpause d690250bd84a -> Despausa a execução do container cujo ID é o d690250bd84a
+docker container rm d690250bd84a -> Remove o container cujo ID é o d690250bd84a (usar -f se o container está no ar, isso vai forçar sua parada)
+docker container prune -> Remove todos os containers parados
