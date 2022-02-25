@@ -7,3 +7,7 @@ docker container pause d690250bd84a -> Pausa a execução do container cujo ID �
 docker container unpause d690250bd84a -> Despausa a execução do container cujo ID é o d690250bd84a
 docker container rm d690250bd84a -> Remove o container cujo ID é o d690250bd84a (usar -f se o container está no ar, isso vai forçar sua parada)
 docker container prune -> Remove todos os containers parados
+docker container run -it busybox -> Executa um container para a imagem busybox e nos joga para dentro dele (shell sh)
+docker container run --name my-webserver -dp 8080:80 nginx -> Executa um container com o nome de "my-webserver" para a imagem no nginx, mapeando a porta 8080 do host para a porta 80 do container
+docker container port d690250bd84a -> Verifica os mapeamentos de portas UDP/TCP do container cujo ID é d690250bd84a
+docker container run -d -p 1443:443 -p 8080:80 --name my-webserver-https nginx -> Executa um container chamado my-webserver-https, mapeando as portas 8080 e 1443 do host para as portas 80 e 443 do container, respectivamente
